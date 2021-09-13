@@ -1,0 +1,6 @@
+terraform.tfstate
+terraform.tfstate.backup
+.terraform
+kubeconfig_dev
+.envrc
+

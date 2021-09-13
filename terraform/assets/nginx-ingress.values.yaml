@@ -1,0 +1,40 @@
+controller:
+  resources:
+    limits:
+      memory: 600Mi
+    requests:
+      cpu: 100m
+      memory: 400Mi
+
+  ingressClass: "nginx"
+  replicaCount: 2
+
+  publishService:
+    enabled: true
+
+  config:
+    disable-access-log: "true"
+    enable-brotli: "true"
+    error-log-level: "error"
+    server-tokens: "false"
+    hsts: "true"
+    hsts-include-subdomains: "true"
+    hsts-max-age: "31536000"
+    hsts-preload: "true"
+
+
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
+      honorLabels: true
+
+  service:
+    externalTrafficPolicy: Local
+    type: NodePort
+    nodePorts:
+      http: 32080
+      https: 32443
+
+  admissionWebhooks:
+    enabled: false
