@@ -48,12 +48,12 @@ module "alb" {
       target_type      = "instance"
       health_check = {
         enabled             = true
-        interval            = 30
+        interval            = 10
         path                = "/healthz"
         port                = "traffic-port"
         healthy_threshold   = 3
         unhealthy_threshold = 3
-        timeout             = 10
+        timeout             = 5
       }
     },
   ]
