@@ -1,4 +1,4 @@
-FROM node:16.8.0-bullseye
+FROM node:14-bullseye-slim
 COPY . .
 RUN yarn install
 CMD ["node", "index.js"]
