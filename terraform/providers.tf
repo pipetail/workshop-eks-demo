@@ -13,6 +13,13 @@ terraform {
       version = ">= 2.3.0"
     }
   }
+  backend "s3" {
+    bucket         = "terraform-sabo-workshop"
+    key            = "infrastructure"
+    region         = "eu-west-1"
+    dynamodb_table = "terraform-backend"
+    encrypt        = true
+  }
 }
 
 provider "aws" {
