@@ -4,7 +4,7 @@ FROM base as dev
 WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install
-CMD ["yarn", "run", "nodemon", "index.js"]
+CMD ["yarn", "run", "nodemon", "--inspect-brk=0.0.0.0", "index.js"]
 
 FROM base as prod
 WORKDIR /app
