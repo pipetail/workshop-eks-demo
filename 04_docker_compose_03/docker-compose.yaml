@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  backend:
+    image: 320516442231.dkr.ecr.eu-west-1.amazonaws.com/backend:${BACKEND_VERSION:-v0.0.6}
+    init: true
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+      target: dev
+    ports:
+      - 3000:3000
+    volumes:
+      - ./index.js:/app/index.js
+
+volumes:
+  modules:
