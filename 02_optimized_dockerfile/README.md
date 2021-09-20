@@ -1,19 +1,6 @@
-## start the project
+## build
 
 ```bash
-npm install -g yarn
-npm init
-yarn add express winston express-winston --save
-```
-
-## snippets
-
-1. https://expressjs.com/en/starter/hello-world.html
-2. https://www.npmjs.com/package/express-winston
-
-## docker artifacts
-
-```dockerfile
-FROM node:16.8.0-bullseye
+docker build -t 859133351452.dkr.ecr.eu-west-1.amazonaws.com/backend:v0.0.2 --platform linux/amd64 .
 ```
 
