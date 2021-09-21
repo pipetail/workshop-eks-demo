@@ -65,4 +65,13 @@ module "alb" {
       target_group_index = 0
     }
   ]
+
+  https_listeners = [
+    {
+      port               = 443
+      protocol           = "HTTPS"
+      certificate_arn    = aws_acm_certificate.wildcard.arn
+      target_group_index = 0
+    }
+  ]
 }

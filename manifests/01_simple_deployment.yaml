@@ -19,4 +19,3 @@ spec:
         image: 859133351452.dkr.ecr.eu-west-1.amazonaws.com/backend:v0.0.1
         ports:
         - containerPort: 3000
-
