@@ -30,7 +30,7 @@ app.use(expressWinston.logger({
 }));
 
 app.get('/', (req, res) => {
-  res.send('Hello World (1st)!')
+  res.send('Hello World!')
 })
 
 app.get('/_probe/ready', (req, res) => {

@@ -27,7 +27,7 @@ app.get('/_probe/alive', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-  res.send('Hello World (2st)!')
+  res.send('Hello World!')
 })
 
 app.listen(port, '0.0.0.0', () => {
