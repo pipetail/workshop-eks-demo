@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   backend:
-    image: 320516442231.dkr.ecr.eu-west-1.amazonaws.com/backend:${BACKEND_VERSION:-v0.0.6}
+    image: backend:dev-v0.0.1
     init: true
     build:
       context: ./
@@ -11,7 +11,15 @@ services:
       - 3000:3000
       - 9229:9229
     volumes:
-      - ./index.js:/app/index.js
+      - modules:/opt/project/node_modules
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: heslojeveslo
+      MYSQL_DATABASE: test
 
 volumes:
   modules:

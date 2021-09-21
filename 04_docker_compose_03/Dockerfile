@@ -1,10 +1,8 @@
 FROM node:14-bullseye-slim as base
 
 FROM base as dev
-WORKDIR /app
-COPY package.json yarn.lock ./
-RUN yarn install
-CMD ["yarn", "run", "nodemon", "--inspect-brk=0.0.0.0", "index.js"]
+RUN yarn global add nodemon
+WORKDIR /opt/project
 
 FROM base as prod
 WORKDIR /app

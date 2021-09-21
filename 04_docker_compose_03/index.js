@@ -30,6 +30,7 @@ app.get('/', (req, res) => {
   res.send('Hello World (2st)!')
 })
 
-const server = app.listen(port)
-
+app.listen(port, '0.0.0.0', () => {
+  console.log("server has started!")
+})
 
